@@ -5,10 +5,21 @@
   <title>First Form</title>
 </head>
 <body>
-<form action="http://localhost:5000/login" method="post">
-  <p>Enter your name: </p>
-  <p><input type = "text" name="nam"/></p>
-  <p><input type="submit" value="Enter"/></p>
-</form>
+  <h1> Login Screen </h1>
+  {% if errorMessage %}
+    <p><strong>Error message: </strong>{{errorMessage}}</p>
+    {% endif %}
+    <form action="" method="post">
+      <dl>
+        <dt>Username: </dt>
+        <dd>
+          <input type = "text" name="username" value="{{request.form.username}}">
+        </dd>
+        <dt>Password: </dt>
+        <dd><input type="password" name="password">
+        </dd>
+      </dl>
+      <p><input type="submit" value="Login"</p>
+    </form>
 </body>
 </html>

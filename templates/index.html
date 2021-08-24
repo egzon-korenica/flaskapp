@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset = "UTF-8">
+  <title>Flask Message Flashing</title>
+</head>
+<body>
+{% with messages = get_flashed_messages() %}
+{% if messages %}
+
+<ul>
+  {% for message in messages %}
+  <li>{{message}}</li>
+  {% endfor %}
+</ul>
+{% endif %}
+{% endwith %}
+
+<h1>You can now see Message flashing in Flask</h1>
+<p>Do you want to <a href= "{{url_for('login')}}"></p>
+  <b> log in ? </b>
+</body>
+</html>
